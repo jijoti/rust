@@ -2,7 +2,7 @@ use std::fs;
 use std::collections::HashSet;
 
 fn main() {
-    let contents = fs::read_to_string("C:\\Users\\Joshua\\.vscode\\rust\\AoC\\2022\\day3\\input.txt")
+    let contents = fs::read_to_string(".\\input.txt")
     .expect("Should have been able to read the file");
     println!("Answer to part 1: {}", solve_part1(&contents));
     println!("Answer to part 2: {}", solve_part2(&contents));
