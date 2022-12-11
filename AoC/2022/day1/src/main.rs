@@ -1,8 +1,8 @@
 use std::fs;
 
 fn main() {
-    let contents = fs::read_to_string(".\\input.txt")
-    .expect("Should have been able to read the file");
+    let contents =
+        fs::read_to_string(".\\input.txt").expect("Should have been able to read the file");
     println!("Answer to part 1: {}", solve_part1(&contents));
     println!("Answer to part 2: {}", solve_part2(&contents));
 }
@@ -23,7 +23,6 @@ fn solve_part1(contents: &String) -> i32 {
     max
 }
 
-
 fn solve_part2(contents: &String) -> i32 {
     let split = contents.split("\r\n");
     let mut current: i32 = 0;
@@ -39,5 +38,5 @@ fn solve_part2(contents: &String) -> i32 {
     calories.push(current);
     calories.sort();
     calories.reverse();
-    calories[0] + calories[1] + calories[2]  
+    calories[0] + calories[1] + calories[2]
 }
