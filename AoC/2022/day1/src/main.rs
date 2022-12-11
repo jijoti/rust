@@ -1,4 +1,5 @@
 use std::fs;
+use std::cmp::max;
 
 fn main() {
     let contents =
@@ -10,17 +11,16 @@ fn main() {
 fn solve_part1(contents: &String) -> i32 {
     let split = contents.split("\r\n");
     let mut current: i32 = 0;
-    let mut max: i32 = 0;
+    let mut max_calories = 0;
     for s in split {
         if s == "" {
-            max = if current > max { current } else { max };
+            max_calories = max(current, max_calories);
             current = 0;
         } else {
             current += s.parse::<i32>().expect("Not a number!");
         }
     }
-    max = if current > max { current } else { max };
-    max
+    max(current, max_calories)
 }
 
 fn solve_part2(contents: &String) -> i32 {
