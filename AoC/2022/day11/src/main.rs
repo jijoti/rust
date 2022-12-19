@@ -7,6 +7,7 @@ fn main() {
     println!("Answer to part 2: {}", solve_part2(&contents));
 }
 
+// Hand parsed the problem
 fn solve_part1(_contents: &String) -> i32 {
     let mut items = vec![
         vec![65, 78],
@@ -100,7 +101,11 @@ fn apply_7(item: i32) -> (i32, usize) {
     }
 }
 
-fn solve_part2(contents: &String) -> i128 {
+// Pretty sure it would have fit in i64
+// 2^64 ~= (10^3)^6 = 10^18, 
+// but we're moding each step by only 10^7
+// largest operation is square so only need 10^14
+fn solve_part2(_contents: &String) -> i128 {
     let mut items = vec![
         vec![65, 78],
         vec![54, 78, 86, 79, 73, 64, 85, 88],
